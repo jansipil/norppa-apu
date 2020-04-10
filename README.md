@@ -1,6 +1,6 @@
 # Norppa-apu
 
-Website using HTML, CSS and JavaScript with Node.js as backend. Uses jQuery in client javascript, but can be made to work without it. Uses expree node modlu in the backend to handle communication with frontend.
+Website using HTML, CSS and JavaScript with Node.js as backend. Uses jQuery in client javascript, but can be made to work without it. Uses express node module in the backend to handle communication with frontend.
 
 Created for university course "Käyttöliittymäohjelmointi"
 
