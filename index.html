@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Norppa-apu</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="scripts.js"></script>
+
+    <header class="header">
+    	<div class="container">
+			<h1 class="nav-logo">
+				<a href="#" onClick="swapPages('main-div', 'frontpage')">
+					<img src="http://flexbox.ninja/assets/images/logo.svg" width="170" height="95" alt="Flexbox.ninja">
+				</a>
+			</h1>
+			<nav class="main-nav">
+				<ul class="main-nav-list">
+					<li>
+						<button onClick="swapPages('main-div', 'donatepage')">Lahjoita</button>
+					</li>
+					<li>
+						<button onClick="swapPages('main-div', 'gallerypage')">Galleria</button>
+					</li>
+					<li>
+						<button onClick="swapPages('main-div', 'infopage')">Info</button>
+					</li>
+				</ul>
+			</nav>
+			<h1 class="nav-logo2">
+				<img src="http://flexbox.ninja/assets/images/logo.svg" width="300" height="95" alt="Flexbox.ninja">
+			</h1>
+		</div>
+    </header>
+
+    <div class="main-div">
+
+    	<div class="frontpage">
+	    	<h1 class="main-logo">
+	    		<img src="http://flexbox.ninja/assets/images/logo.svg" width="500" height="100" alt="Flexbox.ninja">
+	    	</h1>
+	    	<div class="main-text">
+
+	    		<h1>Saimaannorppa tarvitsee apuasi!</h1>
+	    		<p>Auta meitä pelastamaan saimaannorppa, maailman uhanalaisin hylje!</p>
+
+	    		<h2>Mitä sinä voit tehdä</h2>
+	    		<button class="basic-button" onClick="swapPages('main-div', 'donatepage')">Lahjoita saimaanorpan suojeluun</button>
+
+	    		<h2>Tietoa meistä</h2>
+	    		<p>
+	    			Norppa-apu on voittoa tavoittelematon järjestö, jonka ainoa tarkoitus on pelastaa saimaannorppia. Lahjoituksien avulla organisoimme suojelutalkoita, kuten lumipesien kolaamista Saimaalla, rahoitamme tutkimusta, levitämme norppatietoa ja järjestämme rauhanomaisia protesteja.
+	    		</p>
+	    		<button class="basic-button" onClick="swapPages('main-div', 'infopage')">Lue lisää toiminnastamme</button>
+	    	</div>
+    	</div>
+
+    	<div class="donatepage">
+	    	<h1 class="main-logo">
+	    		<img src="http://flexbox.ninja/assets/images/logo.svg" width="500" height="100" alt="Flexbox.ninja">
+	    	</h1>
+	    	<div class="main-text">
+
+	    		<h2>Valitse lahjoitussumma: </h2>
+	    		
+	    		<div class="radio-buttons" id="radio-amount">
+    				<input type="radio" id="radio5e" name="radioamount" value="5" checked>
+    				<label for="radio5e">5e</label>
+
+    				<input type="radio" id="radio20e" name="radioamount" value="20">
+    				<label for="radio20e">20e</label>
+
+    				<input type="radio" id="radio50e" name="radioamount" value="50">
+    				<label for="radio50e">50e</label>
+
+    				<input type="radio" id="radio100e" name="radioamount" value="100">
+    				<label for="radio100e">100e</label> 
+
+    				<input type="radio" id="radiocustomamount" name="radioamount" value="0">
+    				<label for="radiocustomamount">Muu summa:</label> 
+    				<input type="number" name="custom-money-amount" min="0">
+				</div>
+
+				<div class="donation-fields">
+					<h6>Tähdellä merkityt (*) kohdat ovat pakollisia</h6> 
+					<p>Nimesi*: <input type="text" name="field-name"></p>
+					<p>Sähköposti*: <input type="text" name="field-email"></p>
+					<p>Viesti (vapaaehtoinen): <br>
+					<textarea id="field-message" class="large-field" rows="4" cols="40"></textarea>
+
+					<p><input type="checkbox" name="field-gift-check" id="field-gift-check" onClick="toggleOptions('#field-gift-check', '.gift-fields');"> Tämä on lahja toisen henkilön nimissä</p>
+					<div class="gift-fields">
+						<p>Lahjan saajan nimi*: <input type="text" name="field-gift-name"></p>
+						<p>
+							<input type="checkbox" name="field-gift-email-other">
+							Haluan lähettä sähköpostiin sertifikaatin
+							<input type="text" name="field-gift-receiver">
+						</p>
+						<p><input type="checkbox" name="field-gift-email-myself"> Haluan sertifikaatin omaan sähköpostiin</p>
+					</div>
+				</div>
+
+				<div class="radio-buttons" id="radio-type">
+    				<input type="radio" id="radio_mobilepay" name="radiopayment" value="mobilepay" checked>
+    				<label for="radio_mobilepay">MobilePay</label>
+
+    				<input type="radio" id="radio_pivo" name="radiopayment" value="pivo">
+    				<label for="radio_pivo">Pivo</label>
+
+    				<input type="radio" id="radio_pankki" name="radiopayment" value="pankki">
+    				<label for="radio_pankki">Pankki</label>
+
+    				<input type="radio" id="radio_kortti" name="radiopayment" value="kortti">
+    				<label for="radio_kortti">Kortti</label> 
+
+    				<input type="radio" id="radio_lasku" name="radiopayment" value="lasku">
+    				<label for="radio_lasku">Lasku</label> 
+				</div>
+
+					<button type="button" class="donate-button" onClick="collectData()">Lahjoita!</button>
+
+	    	</div>
+    	</div>
+
+    	<div class="gallerypage">
+
+	    	<div class="main-text">
+
+	    		<div class="gallery-row">
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(1)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(2)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(3)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(4)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(5)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(6)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(7)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(8)" class="gallery-hover-shadow">
+					</div>
+					<div class="gallery-column">
+						<img src="http://flexbox.ninja/assets/images/logo.svg" onclick="openModal();currentSlide(9)" class="gallery-hover-shadow">
+					</div>
+				</div>
+
+				<div id="galleryModal" class="gallery-modal">
+					<span class="close-modal" onclick="closeModal()">&times;</span>
+					<div class="gallery-modal-content">
+						<div class="gallery-image-container">
+							<div class="gallery-slides">
+								<div class="slide-number">1</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">2</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">3</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">4</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+							
+							<div class="gallery-slides">
+								<div class="slide-number">5</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">6</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">7</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">8</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<div class="gallery-slides">
+								<div class="slide-number">9</div>
+								<img src="http://flexbox.ninja/assets/images/logo.svg" style="width:100%">
+							</div>
+
+							<a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+							<a class="next" onclick="moveSlides(1)">&#10095;</a>
+						</div>
+
+						<div class="slide-caption-container" id="slideCaptions">
+							<div class="slide-caption">
+								<h1 id="slide-name">Pullervo</h1>
+								<h2 id="slide-title">Norppaliven tähti</h2>
+								<p id="slide-age">Ikä: vanha</p>
+								<p id="slide-size">Koko: läski</p>
+								<p id="slide-information">
+									Jotaki muuta aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaa aaaa aaaaaaaaa aaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaa
+								</p>
+							</div>
+							<div class="slide-caption">
+								<h1 id="slide-name">2</h1>
+								<h2 id="slide-title">2</h2>
+								<p id="slide-age">2</p>
+								<p id="slide-size">2</p>
+								<p id="slide-information">
+									2
+								</p>
+							</div>
+							<div class="slide-caption">
+								<h1 id="slide-name">3</h1>
+								<h2 id="slide-title">3</h2>
+								<p id="slide-age">3</p>
+								<p id="slide-size">3</p>
+								<p id="slide-information">
+									3
+								</p>
+							</div>
+							<div class="slide-caption">
+								<h1 id="slide-name">P4</h1>
+								<h2 id="slide-title">4</h2>
+								<p id="slide-age">4</p>
+								<p id="slide-size">4</p>
+								<p id="slide-information">
+									4
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+	    	</div>
+    	</div>
+
+    	<div class="infopage">
+	    	<h1 class="main-logo">
+	    		<img src="http://flexbox.ninja/assets/images/logo.svg" width="500" height="100" alt="Flexbox.ninja">
+	    	</h1>
+	    	<div class="main-text">
+
+	    		<p>Esittelyteksti saimaannorpasta</p>
+
+	    		<h1>Tietoa saimaannorpasta</h1>
+	    		<p>Teskstiä pitkästi</p>
+
+	    		<h2>Miten voit auttaa?</h2>
+	    		<p>Tekstiä pitkästi</p>
+
+	    		<h2>Tietoa meistä</h2>
+	    		<p>
+	    			Norppa-apu on voittoa tavoittelematon järjestö, jonka ainoa tarkoitus on pelastaa saimaannorppia. Lahjoituksien avulla organisoimme suojelutalkoita, kuten lumipesien kolaamista Saimaalla, rahoitamme tutkimusta, levitämme norppatietoa ja järjestämme rauhanomaisia protesteja.
+	    		</p>
+
+	    		<button class="basic-button" onClick="swapPages('main-div', 'donatepage')">Lahjoita</a>
+	    	</div>
+    	</div>
+
+    	<div class="thankspage">
+	    	<h1 class="main-logo">
+	    		<img src="http://flexbox.ninja/assets/images/logo.svg" width="500" height="100" alt="Flexbox.ninja">
+	    	</h1>
+	    	<div class="main-text">
+
+	    		<h1>Kiitos lahjoituksestasi!</h1>
+	    		<p>Olemme lähettäneet sähköpostin osoitteeseen:</p>
+
+	    		<h2>Katso ketä autoit!</h2>
+	    		<button class="basic-button" onClick="swapPages('main-div', 'gallerypage')">Tutustu norppagalleriaan</button>
+	    		
+	    	</div>
+    	</div>
+    </div>
+
+
+    <footer class="footer">
+    	<div class="container">
+			<nav class="main-nav">
+				<ul class="main-nav-list">
+					<li>
+						<a href="#">Tietoa</a>
+					</li>
+					<li>
+						<a href="#">Linkki</a>
+					</li>
+					<li>
+						<a href="#">Linkki</a>
+					</li>
+					<li>
+						<a href="#">Linkki</a>
+					</li>
+				</ul>
+			</nav>
+			<p>@Norppa-apu 2020, Janne Sipilä & Annika Helamo</p>
+		</div>
+
+
+    </footer>
+
+</body>
+</html>

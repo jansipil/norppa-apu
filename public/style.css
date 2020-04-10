@@ -1,0 +1,300 @@
+html {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+}
+
+p{
+  font-size: 20px;  
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+body {
+  width: 70%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #e6e6e6;
+  border: 5px solid black;
+}
+
+div {
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 2px solid black;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ccc;
+}
+
+.main-nav ul {
+  margin: 1em 2em 2em;
+  text-align: center;
+}
+.main-nav li {
+  display: inline;
+
+}
+.main-nav a {
+  display: inline-block;
+  padding: .5em 1.5em;
+}
+
+.main-nav button {
+  padding: .5em 1.5em;
+  background-color: #00BFFF;
+  border-color: #000;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+.main-nav button:hover {
+  background-color: #008B8B;
+}
+
+.main-div{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main-text{
+  width: 100%;
+  text-align: left;
+  display: inherit;
+}
+
+.frontpage{
+  display: inline-block;
+  width: 60%
+}
+
+.donatepage, .gallerypage, .infopage, .thankspage{
+  display: none;
+  width: 60%
+}
+
+.radio-buttons {
+  margin: 10px;
+}
+
+.radio-buttons input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 10px 20px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: #4dffff;
+  border-color: #008B8B;
+}
+
+.radio-buttons label:hover {
+  background-color: #4dffff;
+}
+
+.large-field {
+  width: 500px;
+  height: 40px;
+}
+
+.gift-fields {
+  display: none;
+}
+
+.donate-button {
+  width: 300px;
+  padding: 10px 20px;
+  background-color: #A9A9A9;
+  border: 2px solid #444;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.donate-button:hover {
+  background-color: #4d4d4d;
+}
+
+.gallery-row > .gallery-column {
+  padding: 0 8px;
+}
+
+.gallery-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.gallery-column {
+  float: left;
+  width: 25%;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.gallery-modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  height: 80%;
+  max-width: 1200px;
+}
+
+.close-modal {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close-modal:hover, .close-modal:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gallery-slides {
+  display: none;
+}
+
+.gallery-slides img {
+  height: fit-content;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #fff;
+  background-color: #808080;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: #008B8B;
+}
+
+.slide-number {
+  color: #000;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.slide-caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+  height: inherit;
+}
+
+.slide-caption {
+  display: none;
+}
+
+.slide-caption h1, h2, p {
+  
+}
+
+img.slide {
+  opacity: 0.6;
+}
+
+.active {
+  opacity: 1;
+}
+
+.slide:hover {
+  opacity: 1;
+}
+
+img.gallery-hover-shadow {
+  transition: 0.3s;
+}
+
+.gallery-hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.basic-button {
+  padding: .3em .5em;
+  background-color: #00BFFF;
+  border-color: #000;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.basic-button:hover {
+  background-color: #008B8B;
+}
+
+.footer {
+  border-top: 2px solid black;
+}
+
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  background-color: #ccc;
+  padding: 0;
+}
