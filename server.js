@@ -16,6 +16,7 @@ app.get('/', function(req, res){
 
 app.post('/donate/', function(req, res) {
   var data = req.body;
+  //do something here with the data, or just print it out
   try {
   	console.log(data);
   	//send ok if data is good
