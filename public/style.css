@@ -42,7 +42,11 @@ img {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
+  background-image: url("images/norppa_vesi.png"), url("images/norppa_banner.png");
   background-color: #ccc;
+  background-size: contain;
+  background-repeat: repeat, no-repeat;
+  background-position: right;
 }
 
 .main-nav ul {
@@ -79,6 +83,11 @@ img {
   width: 100%;
   text-align: left;
   display: inherit;
+}
+
+.main-text li {
+  font-size: 16px;
+  margin: 5px;
 }
 
 .frontpage{
@@ -202,6 +211,9 @@ img {
 
 .gallery-slides img {
   height: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .prev, .next {
@@ -248,6 +260,8 @@ img {
 
 .slide-caption {
   display: none;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .slide-caption h1, h2, p {
