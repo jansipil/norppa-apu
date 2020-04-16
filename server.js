@@ -16,5 +16,13 @@ app.get('/', function(req, res){
 
 app.post('/donate/', function(req, res) {
   var data = req.body;
-  console.log(data);
+  try {
+  	console.log(data);
+  	//send ok if data is good
+  	res.sendStatus(200);
+  } catch(err){
+  	//send internal error if something goes wrong
+  	res.sendStatus(500);
+  }
+  
 });

@@ -10,7 +10,13 @@ function donate(donationData){
 			url: '/donate',
 			type: 'POST',
 			contentType: 'application/json',
-			data: JSON.stringify(donationData)
+			data: JSON.stringify(donationData),
+			success: function(res){
+				swapPages('main-div', 'thankspage');
+			},
+			error: function(res){
+				alert("Jotain meni vikaan");
+			}
 	});
 }
 
@@ -53,7 +59,6 @@ function collectData(){
 	data["type"] = type;
 
 	donate(data);
-	swapPages('main-div', 'thankspage');
 }
 
 function toggleOptions(checkbox, div){
