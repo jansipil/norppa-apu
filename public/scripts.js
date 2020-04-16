@@ -22,35 +22,32 @@ function donate(donationData){
 
 function collectData(){
 
-	data = {};
+	var data = {};
+	var errors = [];
 
 	var amount = $('input[name=radioamount]:checked').val();
 	if (amount == 0) {
 		amount = $("input[name=custom-money-amount]").val();
 		if(amount < 1){
-			alert("viallinen summa");
-			return;
+			errors.push("Viallinen lahjoitussumma");
 		}
 	}
 	data["amount"] = amount;
 	var name = $("input[name=field-name]").val();
 	if (name === "") {
-		alert("syötä nimi");
-		return;
+		errors.push("Syötä nimesi");
 	}
 	data["name"] = name;
 	var email = $("input[name=field-email]").val();
 	if (email === "") {
-		alert("syötä email");
-		return;
+		errors.push("Syötä sähköpostisi");
 	}
 	data["email"] = email;
 	var message = $("#field-message").val();
 	if($("input[name=field-gift-check]").prop('checked')){
 		var receiver = $("input[name=field-gift-name]").val();
 		if (receiver === "") {
-			alert("syötä saajan nimi");
-			return;
+			errors.push("Syötä lahjan saajan nimi");
 		}
 		data["receiver"] = receiver;
 		//checking of other checkboxes is unnecessary unless we want to actually send emails or or do something with that info
@@ -58,7 +55,10 @@ function collectData(){
 	var type = $('input[name=radiopayment]:checked').val();
 	data["type"] = type;
 
-	donate(data);
+	if(errors && errors.length)
+		alert(errors.join('\n'));
+	else
+		donate(data);
 }
 
 function toggleOptions(checkbox, div){
